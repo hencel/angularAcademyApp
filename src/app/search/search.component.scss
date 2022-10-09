@@ -14,7 +14,15 @@
         margin: 50px 0 15px 0;
     }
     .searcher-bar {
-        
+        position: relative;
+        .searcher-bar--complete_bar {
+            display: none;
+            position: absolute;
+            min-height: 18px;
+            background-color: rgb(220, 220, 220);
+            width: 100%;
+            line-height: 18px;
+        }
     }
     button {
         background-color: blue;
