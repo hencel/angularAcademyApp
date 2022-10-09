@@ -1,3 +1,10 @@
-<div class="">
-    <input placeholder="Type search phrase" (keyup)="searchHandler($event)" />
+<div class="searcher-container searcher">
+    <label class="searcher-label">Find info about European capital:</label>
+    <div>
+        <div class="searcher-bar">
+            <input placeholder="Type search phrase" (keyup)="searchHandler($event)" />
+            <div></div>
+        </div>
+        <button>Find</button>
+    </div>
 </div>
