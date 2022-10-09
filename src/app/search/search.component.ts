@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { DataService } from '../service/get-data.service';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
-  constructor() { }
+  url: string = "./assets/capitals.json";
+  rawData: any = [];
 
-  ngOnInit(): void {
+  constructor(private service: DataService) {
+    this.getDataFromService();
+  }
+
+  getDataFromService() {
+    this.service.getData(this.url).subscribe((data) => {
+      this.rawData = data;
+    });
+  }
+
+  searchHandler(event: any) {
+    console.log(event.target.value);
+    console.log(this.rawData);
   }
 
 }
