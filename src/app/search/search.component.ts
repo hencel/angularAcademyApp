@@ -9,7 +9,7 @@ import { DataService } from '../service/get-data.service';
 export class SearchComponent {
 
   url: string = "./assets/capitals.json";
-  rawData: any = [];
+  rawData: Object = [];
 
   constructor(private service: DataService) {
     this.getDataFromService();
