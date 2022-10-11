@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { SearchRoutingModule } from './search/search-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AutocompleteComponent } from './search/autocomplete/autocomplete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent
+    SearchComponent,
+    AutocompleteComponent
   ],
   imports: [
     BrowserModule,

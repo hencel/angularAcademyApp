@@ -3,7 +3,7 @@
     <div>
         <div class="searcher-bar">
             <input placeholder="Type search phrase" (keyup)="searchHandler($event)" />
-            <div class="searcher-bar--complete_bar"></div>
+            <app-autocomplete *ngIf="list.length != 0" [items]="list"></app-autocomplete>
         </div>
         <button>Find</button>
     </div>
