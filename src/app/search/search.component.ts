@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Data } from '@angular/router';
 import { DataService } from '../service/get-data.service';
+import { DataModel } from './dataModel';
 
 @Component({
   selector: 'app-search',
@@ -9,21 +11,22 @@ import { DataService } from '../service/get-data.service';
 export class SearchComponent {
 
   url: string = "./assets/capitals.json";
-  rawData: Object = [];
+  capitals: string[] = [];
+  list: string[] = [];
 
   constructor(private service: DataService) {
     this.getDataFromService();
   }
 
   getDataFromService() {
-    this.service.getData(this.url).subscribe((data) => {
-      this.rawData = data;
+    this.service.getData(this.url).subscribe((data: DataModel) => {
+      this.capitals = data.capitals;
     });
   }
 
   searchHandler(event: any) {
-    console.log(event.target.value);
-    console.log(this.rawData);
+    this.list = this.capitals.filter((val) => {
+      return val.toLowerCase().includes(event.target.value.toLowerCase())
+    });
   }
-
 }
