@@ -28,5 +28,6 @@ export class SearchComponent {
     this.list = this.capitals.filter((val) => {
       return val.toLowerCase().includes(event.target.value.toLowerCase())
     });
+    event.target.value.length == 0 ? this.list = [] : ''
   }
 }
