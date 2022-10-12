@@ -1,5 +1,5 @@
 <div class="result-box">
     <ul *ngFor="let item of items">
-        <li>{{item}}</li>
+        <li (click)="chooseValue()">{{item}}</li>
     </ul>
 </div>

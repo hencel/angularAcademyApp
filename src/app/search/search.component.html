@@ -2,9 +2,13 @@
     <label class="searcher-label">Find info about European capital:</label>
     <div>
         <div class="searcher-bar">
-            <input placeholder="Type search phrase" (keyup)="searchHandler($event)" />
-            <app-autocomplete *ngIf="list.length != 0" [items]="list"></app-autocomplete>
+            <input placeholder="Type search phrase" 
+            (keyup)="searchHandler($event)" 
+            value="{{choosenValue}}" 
+            #inputElement
+            />
+            <app-autocomplete *ngIf="list.length != 0" [items]="list" (clickedValue)="getChoosenValue($event)"></app-autocomplete>
         </div>
-        <button>Find</button>
+        <button (click)="makeSearch(inputElement)">Find</button>
     </div>
 </div>
