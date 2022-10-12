@@ -1,6 +1,8 @@
 .result-box {
     border: 1px dotted #ccc;
     padding: 3px;
+    position: absolute;
+    width: 100%;
 }
 .result-box ul {
     list-style-type: none;

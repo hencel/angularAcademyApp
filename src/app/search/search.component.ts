@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Data } from '@angular/router';
 import { DataService } from '../service/get-data.service';
 import { DataModel } from './dataModel';
 
@@ -13,6 +12,8 @@ export class SearchComponent {
   url: string = "./assets/capitals.json";
   capitals: string[] = [];
   list: string[] = [];
+  choosenValue: string = '';
+  inputElement: string = '';
 
   constructor(private service: DataService) {
     this.getDataFromService();
@@ -29,5 +30,15 @@ export class SearchComponent {
       return val.toLowerCase().includes(event.target.value.toLowerCase())
     });
     event.target.value.length == 0 ? this.list = [] : ''
+  }
+
+  getChoosenValue(choosenValue: string) {
+    this.choosenValue = choosenValue;
+    this.list = [];
+  }
+
+  makeSearch(input: any) {
+    let url = `https://www.google.com/search?q=${input.value}`;
+    window.open(url, '_blank')
   }
 }
