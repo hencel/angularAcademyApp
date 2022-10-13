@@ -9,6 +9,6 @@
             />
             <app-autocomplete *ngIf="list.length != 0" [items]="list" (clickedValue)="getChoosenValue($event)"></app-autocomplete>
         </div>
-        <button (click)="makeSearch(inputElement.value)">Find</button>
+        <button (click)="makeSearch(inputElement.value)">Search</button>
     </div>
 </div>
