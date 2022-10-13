@@ -1,17 +1,18 @@
 .result-box {
-    border: 1px dotted #ccc;
+    border: none;
     padding: 3px;
+    margin-top: 20px;
     position: absolute;
-    width: 100%;
-}
-.result-box ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-.result-box ul li {
-    padding: 5px 0;
-}
-.result-box ul li:hover {
-    background: #eee;
+    min-width: 200px;
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+            padding: 5px 0;
+            &:hover {
+                background: #eee;
+            }
+        }
+    }
 }

@@ -37,8 +37,8 @@ export class SearchComponent {
     this.list = [];
   }
 
-  makeSearch(input: any) {
-    let url = `https://www.google.com/search?q=${input.value}`;
+  makeSearch(value: string) {
+    let url = `https://www.google.com/search?q=${value}`;
     window.open(url, '_blank')
   }
 }

@@ -9,12 +9,23 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        position: relative;
     }
     .searcher-label {
         margin: 50px 0 15px 0;
+        font-size: 20px;
+        font-weight: 700;
     }
     .searcher-bar {
         position: relative;
+        border: 1px solid grey;
+        border-radius: 30px;
+        padding: 10px 50px 10px 25px;
+        input {
+            border: none;
+            outline: none;
+            font-size: 18px;
+        }
         .searcher-bar--complete_bar {
             display: none;
             position: absolute;
@@ -22,13 +33,21 @@
             background-color: rgb(220, 220, 220);
             width: 100%;
             line-height: 18px;
+
         }
     }
     button {
-        background-color: blue;
+        background-color: #496bdd;
         color: #fff;
+        position: absolute;
+        right: 0;
+        height: 100%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        padding: 0 10px;
+        border: none;
         &:hover {
-            background-color: darken($color: blue, $amount: 20%);
+            background-color: darken($color: #496bdd, $amount: 20%);
         }
     }
 }
